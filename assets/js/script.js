@@ -4,7 +4,13 @@ var tasksToDoEl = document.querySelector("#tasks-to-do");
 var taskFormHandler = function(event) { 
   event.preventDefault(); 
   var taskNameInput = document.querySelector("input[name='task-name']").value;
-  var taskTypeInput = document.querySelector("input[name='task-name']").value;
+  var taskTypeInput = document.querySelector("input[name='task-name']").value; 
+//check if input values are empty strings
+  if (!taskNameInput || !taskTypeInput){
+    alert("You need to fill out the task form!");
+    return false;
+  }
+  formEl.reset(); 
 
 //package data up as an obj
 var taskDataObj = {
